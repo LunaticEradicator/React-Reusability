@@ -1,3 +1,45 @@
 * {
   box-sizing: border-box;
 }
+
+.buttonClass {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  font-size: 3rem;
+  margin: 5px;
+  padding: 5px;
+}
+
+.primaryClass {
+  background-color: green;
+}
+
+.secondaryClass {
+  background-color: blanchedalmond;
+}
+
+.warningClass {
+  background-color: orange;
+}
+
+.dangerClass {
+  background-color: red;
+}
+
+.roundedClass {
+  border-radius: 10px;
+}
+
+.outlineClass {
+  border: none;
+  outline: 2px solid rgb(214, 47, 47);
+  background-color: white;
+  color: black;
+}
+
+.newStyle {
+  border: none;
+  outline: 2px solid rgb(214, 47, 47);
+  background-color: rgb(255, 255, 255);
+  color: black;
+}
