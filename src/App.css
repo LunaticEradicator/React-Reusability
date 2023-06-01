@@ -43,3 +43,28 @@
   background-color: rgb(255, 255, 255);
   color: black;
 }
+
+.dropdown {
+  width: 230px;
+  font-size: 1.2rem;
+}
+
+
+.dropdown-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0;
+}
+
+.dropdown-header>h3 {
+  margin: 0;
+}
+
+.panel {
+  cursor: pointer;
+  padding-left: 20px;
+  background-color: rgba(167, 167, 167, 0.329);
+  color: brown;
+  border-radius: 10px;
+  border: 1px solid black;
+}

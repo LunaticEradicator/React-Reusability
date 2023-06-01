@@ -1,5 +1,5 @@
 import './App.css'
-import Button from './component/Button'
+import Button from '../component/Button'
 import { TiAnchor } from "react-icons/ti";
 
 function ButtonPage() {
