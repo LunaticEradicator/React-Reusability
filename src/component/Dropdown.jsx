@@ -31,7 +31,9 @@ export default function Dropdown(props) {
     }
 
     const handleOptionClick = (option) => {
+        // closes the menu after selecting option
         setIsOpen(false)
+        // selects an option to be displayed
         props.onChange(option)
     }
 
@@ -47,7 +49,7 @@ export default function Dropdown(props) {
         <div ref={divElement} className="dropdown">
             {/* <h3 className="dropdown-header" onClick={handleMenu}>{!props.selected ? '...selected' : props.selected}</h3> */}
             <Panel onClick={handleMenu} className="dropdown-header">
-                <h3>{props?.value || 'Select...'} </h3>
+                <div>{props?.value || 'Select...'} </div>
                 <GoChevronDown />
             </Panel>
             {isOpen && <Panel className="dropdown-content">{renderOption}</Panel>}

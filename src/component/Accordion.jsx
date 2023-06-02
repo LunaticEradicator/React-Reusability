@@ -9,7 +9,7 @@ export default function Accordion(props) {
 
     return (
         <div className="accordion" key={props.id} >
-            <h2 onClick={props.handleExpanded}>{props.title}</h2>
+            <div onClick={props.handleExpanded}>{props.title}</div>
             {props.isExpanded && <p>{props.details}</p>}
         </div>
 

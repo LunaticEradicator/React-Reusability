@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import './App.css'
 import Dropdown from '../component/Dropdown'
 
 function DropdownPage() {
@@ -8,6 +7,7 @@ function DropdownPage() {
     const handleSelected = (newOption) => {
         setSelected(newOption)
     }
+
     const option = [
         { label: "Rtx 4090, Most Powerful", value: "4090" },
         { label: "Rtx 4080, Powerful", value: "4080" },
@@ -15,11 +15,14 @@ function DropdownPage() {
     ]
 
     return (
-        <Dropdown
-            option={option}
-            value={selected}
-            onChange={handleSelected}
-        />
+        <div className='dropDownPage'>
+            <Dropdown
+                option={option}
+                value={selected}
+                onChange={handleSelected}
+            />
+        </div>
+
     )
 }
 

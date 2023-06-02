@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import './App.css'
 import Accordion from '../component/Accordion'
 import { nanoid } from 'nanoid'
 
@@ -51,7 +50,7 @@ function AccordionPage() {
     })
 
     return (
-        <div className='app'>
+        <div className='accordionPage'>
             {renderAccordion}
         </div>
 

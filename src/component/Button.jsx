@@ -12,7 +12,7 @@ export default function Button({ children, primary, secondary, danger, warning, 
     })
 
     return (
-        <div className="buttonComponent">
+        <div className="button">
             <button  {...rest} className={customStyling}>{children}</button>
         </div>
     )
