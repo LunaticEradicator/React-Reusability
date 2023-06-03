@@ -18,6 +18,7 @@ h2 {
   font-size: 1.2rem;
   margin: 5px;
   padding: 5px;
+  cursor: pointer;
 }
 
 .primaryClass {
@@ -26,6 +27,7 @@ h2 {
 
 .secondaryClass {
   background-color: blanchedalmond;
+  color: black;
 }
 
 .warningClass {
@@ -106,4 +108,33 @@ h2 {
   border: 1px solid rebeccapurple;
   border-radius: 10px;
   padding: 10px;
+}
+
+.modalBackground {
+  position: fixed;
+  background-color: gray;
+  opacity: 80%;
+  inset: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.modalContent {
+  position: fixed;
+  background-color: rgb(255, 255, 255);
+  width: 350px;
+  height: 200px;
+  border-radius: 10px;
+  opacity: 80%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalScroll {
+  overflow: hidden;
 }

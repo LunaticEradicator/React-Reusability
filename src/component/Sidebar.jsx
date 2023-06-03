@@ -10,6 +10,7 @@ export default function Sidebar() {
         { label: 'Dropdown', to: '/' },
         { label: 'Accordion', to: '/accordion' },
         { label: 'Button', to: '/button' },
+        { label: 'Modal', to: '/modal' },
     ]
 
     const links = linksData.map(link => {

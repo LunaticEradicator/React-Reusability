@@ -4,8 +4,8 @@ import classNames from "classnames"
 export default function Link({ to, children, className, activeClass }) {
     const { navigate, currentPage } = useNavigationContext();
 
-    console.log(currentPage)
-    console.log(to)
+    // console.log(currentPage)
+    // console.log(to)
     const linkDivClass = classNames(className)
     const linkClass = classNames("link", currentPage === to && activeClass)
 
