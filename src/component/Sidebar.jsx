@@ -11,6 +11,7 @@ export default function Sidebar() {
         { label: 'Accordion', to: '/accordion' },
         { label: 'Button', to: '/button' },
         { label: 'Modal', to: '/modal' },
+        { label: 'Table', to: '/table' },
     ]
 
     const links = linksData.map(link => {

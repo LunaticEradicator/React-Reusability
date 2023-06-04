@@ -138,3 +138,29 @@ h2 {
 .modalScroll {
   overflow: hidden;
 }
+
+
+.table {
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+tr {
+  border-bottom: 1px solid red;
+}
+
+td,
+th {
+  padding: 10px;
+}
+
+
+
+.th-div {
+  margin: 5px;
+}
+
+.td-colorDiv {
+  width: 20px;
+  height: 20px;
+}
