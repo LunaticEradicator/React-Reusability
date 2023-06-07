@@ -1,4 +1,5 @@
-import Table from "../component/Table";
+// import Table from "../component/Table";
+import SortableTable from "../component/SortableTable"
 
 export default function TablePage() {
 
@@ -16,9 +17,9 @@ export default function TablePage() {
     ]
 
     const config = [ //Reuse The above Data with custom amount of row for <thead> <tbody> =><td>
-        { label: 'Fruit', render: (fruit) => fruit.name },
+        { label: 'Name', render: (fruit) => fruit.name, sortValue: (item) => item.name },
         { label: 'Color', render: (fruit) => <div style={{ backgroundColor: fruit.color }} className="td-colorDiv" ></div > },
-        { label: 'Score', render: (fruit) => fruit.score }
+        { label: 'Score', render: (fruit) => fruit.score, sortValue: (item) => item.score }
     ]
 
     function keyFn(data) {
@@ -26,6 +27,6 @@ export default function TablePage() {
     }
 
     return (
-        <Table data={data} config={config} keyFn={keyFn} ></Table>
+        <SortableTable data={data} config={config} keyFn={keyFn} ></SortableTable>
     )
 }

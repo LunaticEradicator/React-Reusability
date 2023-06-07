@@ -1,8 +1,13 @@
+import { Fragment } from "react"
 
 export default function Table({ data, config, keyFn }) {
 
     // To show table header with custom amount of column
     const renderTableHeader = config.map(row => {
+        if (row.header) {
+            return <Fragment key={row.label}>{row.header()}</Fragment>
+            // used fragment so that we can assign a key without creating any element inside the dom
+        }
         return (
             <th key={row.label}>{row.label}</th>
         )

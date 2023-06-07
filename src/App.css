@@ -164,3 +164,8 @@ th {
   width: 20px;
   height: 20px;
 }
+
+.sortElement {
+  display: flex;
+  align-items: center;
+}
