@@ -12,6 +12,7 @@ export default function Sidebar() {
         { label: 'Button', to: '/button' },
         { label: 'Modal', to: '/modal' },
         { label: 'Table', to: '/table' },
+        { label: 'Count', to: '/count' },
     ]
 
     const links = linksData.map(link => {

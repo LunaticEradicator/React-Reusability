@@ -9,6 +9,7 @@ import AccordionPage from './pages/AccordionPage'
 import DropdownPage from './pages/DropdownPage'
 import ModalPage from './pages/ModalPage'
 import TablePage from './pages/TablePage'
+import CountPage from './component/CountPage'
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/button"><ButtonPage /></Route>
         <Route path="/modal"><ModalPage /></Route>
         <Route path="/table"><TablePage /></Route>
+        <Route path="/count"><CountPage defaultValue={10} /></Route>
       </div>
     </div>
   )

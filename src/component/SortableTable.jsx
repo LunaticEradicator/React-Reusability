@@ -1,7 +1,7 @@
-import { useState } from "react";
 import Table from "../component/Table"
 import { VscArrowSmallDown } from "react-icons/vsc";
 import { VscArrowSmallUp } from "react-icons/vsc";
+import useSorting from "../customHook/use-sorting";
 
 // 1, find header which have 'sortValue' from config and pass that updatedConfig as the config prop
 
@@ -15,31 +15,13 @@ import { VscArrowSmallUp } from "react-icons/vsc";
 // c, find the correct sortValue function for sorting
 
 
+
+
 export default function SortableTable(props) {
     const { config, data } = props
+    const { sortBy, sortOrder, handleSorting, sortedData } = useSorting(data, config)
 
-    const [sortOrder, setSortOrder] = useState(null);
-    const [sortBy, setSortBy] = useState(null);
 
-    const handleClick = (label) => {
-        if (sortBy && label !== sortBy) { // if we are currently sorting by one column and if we are sorting by new column
-            setSortOrder('asc')
-            setSortBy(label)
-            return;
-        }
-        if (sortOrder === null) {
-            setSortOrder('asc')
-            setSortBy(label)
-        }
-        else if (sortOrder === 'asc') {
-            setSortOrder('desc')
-            setSortBy(label)
-        }
-        else if (sortOrder === 'desc') {
-            setSortOrder(null)
-            setSortBy(null)
-        }
-    }
 
     function getIcon(label, sortBy, sortOrder) {
         if (label !== sortBy) { // so only the corresponding label changes 
@@ -71,7 +53,7 @@ export default function SortableTable(props) {
             return {
                 ...column,
                 header: () =>
-                    <th onClick={() => handleClick(column.label)}>
+                    <th onClick={() => handleSorting(column.label)}>
                         <div className="sortElement">
                             {`${column.label}: `}  {getIcon(column.label, sortBy, sortOrder)}
                         </div>
@@ -81,27 +63,6 @@ export default function SortableTable(props) {
         return column
     })
 
-    let sortedData = data;
-
-    if (sortBy && sortOrder) { // if not null
-
-        // for sorting object we always should use a function to change the sorting condition
-        //  get's the sortValue function from config which is then used to sort value
-        const { sortValue } = config.find(column => column.label === sortBy)
-        sortedData = [...data].sort((a, b) => {
-            const valueA = sortValue(a);
-            const valueB = sortValue(b);
-
-            const reverseOrder = sortOrder === 'asc' ? 1 : -1
-
-            if (typeof (valueA) === "string") {
-                return valueA.localeCompare(valueB) * reverseOrder
-            }
-            else {
-                return (valueA - valueB) * reverseOrder
-            }
-        })
-    }
 
     return (
         <Table
